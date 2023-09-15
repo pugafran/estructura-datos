@@ -9,7 +9,7 @@ import estdatos.ImmutableRational;
 public final class App {
 	
 	private static void comparar(final Rational a, final Rational b) {
-		int x = a.compareTo(b);
+		int x = a.compareTo(b); 
 		System.out.printf("%s.compareTo(%s): %d\n", a, b, x);
 		if (x == 0) {
 			System.out.printf("%s = %s\n", a, b);

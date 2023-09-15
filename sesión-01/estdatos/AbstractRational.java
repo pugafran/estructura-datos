@@ -23,8 +23,48 @@ public abstract class AbstractRational implements Rational {
 		if (!(obj instanceof Rational))
 			return false;
 		Rational other = (Rational) obj;
-		return this.numerator()  == other.numerator() &&
-				this.denominator() * other.denominator();
+		return gcd(this.numerator(), this.denominator()) == gcd(other.numerator(), other.denominator());
 	}
     
+	
+	public void reduce() {
+		int mcd = gcd(this.numerator(),this.denominator());	
+		this.setNumerator(this.numerator()/mcd);
+		this.setDenominator(this.denominator()/mcd);
+	
+		
+	}
+
+	@Override
+	public String toString() {
+		
+		if (this.denominator() == 1) 
+			return this.numerator() + "";
+		
+		else
+			return this.numerator() + "/" + this.denominator();
+	
+	}
+	
+    static int gcd(final int a, final int b) {
+    	if (a == 0 || b == 0) {
+    		throw new IllegalArgumentException();
+    	}
+    	
+        int n1 = a > 0 ? a : -a;
+        int n2 = b > 0 ? b : -b;
+
+        while (n2 != 0) {
+            int temp = n1;
+            n1 = n2;
+            n2 = temp % n2;
+        }
+
+        return n1;
+    }
+
+	public int compareTo(Rational b) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
 }

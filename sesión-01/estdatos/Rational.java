@@ -85,4 +85,6 @@ public interface Rational {
 
     }
 
+	int compareTo(Rational b);
+
 }
