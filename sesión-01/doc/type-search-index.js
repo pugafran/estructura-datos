@@ -1,0 +1,1 @@
+typeSearchIndex = [{"p":"estdatos","l":"AbstractPair"},{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"estdatos","l":"ImmutablePair"},{"p":"estdatos","l":"MutablePair"},{"p":"estdatos","l":"Pair"}];updateSearchResults();
