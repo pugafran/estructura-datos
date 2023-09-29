@@ -44,8 +44,10 @@ public final class App {
         comparar(rat1, rat2);
         comparar(rat1, rat3);
         comparar(rat2, rat3);
-		// Error, operación no soportada
+		
+        // Error, operación no soportada
         rat3.setNumerator(3);
+        
         System.out.printf("Racional r3: %s\n", rat3);
     }
 }

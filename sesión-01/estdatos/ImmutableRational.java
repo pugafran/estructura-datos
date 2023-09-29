@@ -36,6 +36,13 @@ public class ImmutableRational extends AbstractRational {
      * @param r el racional a copiar
      */
     public ImmutableRational(final Rational r) {
+    	if(r instanceof ImmutableRational) {
+    		this.p = ((ImmutableRational) r).p;
+    	}
+    	
+    	else {
+    		this.p = new ImmutablePair<>(r.numerator(), r.denominator());
+    	}
 
     }
 
@@ -53,8 +60,9 @@ public class ImmutableRational extends AbstractRational {
 
 	@Override
 	public int compareTo(Rational b) {
-		// TODO Auto-generated method stub
-		return 0;
+		// Compara dos racionales basándose en la resta de sus numeradores y denominadores
+        int difference = this.numerator() * b.denominator() - b.numerator() * this.denominator();
+        return Integer.compare(difference, 0);
 	}
 
 }
